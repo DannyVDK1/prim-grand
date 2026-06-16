@@ -87,9 +87,9 @@
   .card .corner{position:absolute;top:24px;right:24px;width:32px;height:32px;border-radius:var(--r-ctrl);display:grid;place-items:center;color:var(--snow);background:linear-gradient(var(--trench),var(--trench)) padding-box,var(--grad-aurora) border-box;border:1px solid transparent;transition:transform .25s,background .3s;font-size:15px}
   .card:hover .corner{transform:translate(2px,-2px);background:linear-gradient(var(--reef),var(--reef)) padding-box,var(--grad-aurora) border-box}
   .card .idx{font-size:12px;letter-spacing:1.44px;color:var(--teal);font-weight:500}
-  .card h3{color:var(--snow);font-weight:500;font-size:24px;letter-spacing:-0.29px;margin:auto 0 14px;padding-right:40px}
+  .card h3{color:var(--snow);font-weight:500;font-size:24px;letter-spacing:-0.29px;margin:16px 0 14px;padding-right:40px}
   .card p{font-size:14px;line-height:1.5;color:var(--fog);letter-spacing:.3px}
-  .card .tel{margin-top:18px;font-size:13px;letter-spacing:.8px;color:var(--ice)}
+  .card .tel{margin-top:auto;padding-top:18px;font-size:13px;letter-spacing:.8px;color:var(--ice)}
 
   /* ---------- Fleet (interactive) ---------- */
   .fleet-split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:stretch}
@@ -125,7 +125,7 @@
   .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .why-cell{background:var(--trench);border-radius:var(--r-card);padding:32px 28px;transition:background .3s;min-height:200px;display:flex;flex-direction:column}
   .why-cell:hover{background:var(--reef)}
-  .why-cell .mark{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px 2px rgba(31,111,235,.6);margin-bottom:auto}
+  .why-cell .mark{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px 2px rgba(31,111,235,.6)}
   .why-cell h4{color:var(--snow);font-size:18px;font-weight:500;margin:28px 0 10px;letter-spacing:-0.2px}
   .why-cell p{font-size:13.5px;line-height:1.5;color:var(--fog)}
 
@@ -223,6 +223,7 @@
   .hero-glow{background:radial-gradient(46% 40% at 50% 40%,rgba(31,111,235,.10) 0%,rgba(31,111,235,0) 70%)}
   .hero-vignette{background:radial-gradient(60% 52% at 50% 46%,rgba(255,255,255,.85) 0%,rgba(255,255,255,.32) 52%,rgba(255,255,255,0) 80%)}
   .hero-floor{background:linear-gradient(to top,var(--abyss) 0%,var(--abyss) 26%,rgba(244,248,252,0) 100%)}
+  @media(max-width:640px){.hero{padding-top:86px}}
 </style>
 </head>
 <body>
@@ -276,7 +277,6 @@
       <a class="btn btn-ghost" href="tel:+79147077035">Арендовать технику</a>
     </div>
   </div>
-  <div class="scroll-cue" aria-hidden="true"><span>Листайте</span><span class="line"></span></div>
 </section>
 
 <!-- SERVICES -->
@@ -454,12 +454,13 @@ if(!reduce){
     const r=c.getBoundingClientRect();W=r.width;H=r.height;
     c.width=Math.max(1,Math.floor(W*dpr));c.height=Math.max(1,Math.floor(H*dpr));
     ctx.setTransform(dpr,0,0,dpr,0,0);
-    cols=rows = W<760 ? 12 : 18;
-    tileW=(W*1.32)/(cols+rows-2);   // wide field that overflows the screen edges
-    tileH=tileW*0.31;               // shallow depth
-    vScale=tileW*0.7;
+    const small=W<760;
+    cols=rows = small ? 12 : 18;
+    tileW=(W*(small?1.45:1.32))/(cols+rows-2);   // wide field that overflows the screen edges
+    tileH=tileW*(small?0.52:0.31);               // shallow depth (taller on mobile)
+    vScale=tileW*(small?0.95:0.7);
     maxd=(cols-1)+(rows-1);
-    ox=W/2; oy=H*0.98-(cols+rows-2)*tileH;
+    ox=W/2; oy=H*(small?0.93:0.98)-(cols+rows-2)*tileH;
     seed=20260616;
     const occ=Array.from({length:rows},()=>new Array(cols).fill(false));
     builds=[];
