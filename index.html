@@ -27,7 +27,8 @@
     --maxw:1200px; --r-card:16px; --r-ctrl:6px; --pad-card:40px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  img{max-width:100%}
+  html{scroll-behavior:smooth;overflow-x:hidden}
   body{font-family:var(--font);background:var(--abyss);color:var(--fog);font-size:16px;line-height:1.5;letter-spacing:.2px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   ::selection{background:rgba(31,111,235,.5);color:#fff}
@@ -149,8 +150,8 @@
   .foot-top{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;align-items:flex-start}
   .foot-brand{max-width:320px}
   .foot-brand .name{display:flex;align-items:center;gap:18px;margin-bottom:20px}
-  .foot-brand .name .brand-logo{height:84px;aspect-ratio:1.48;background:var(--logo) center/contain no-repeat}
-  .foot-brand .name span{font-size:26px;font-weight:600;letter-spacing:2px;color:var(--snow);text-transform:uppercase}
+  .foot-brand .name .brand-logo{height:62px;aspect-ratio:1.48;background:var(--logo) center/contain no-repeat;flex:none}
+  .foot-brand .name span{font-size:22px;font-weight:600;letter-spacing:1.5px;color:var(--snow);text-transform:uppercase;white-space:nowrap}
   .foot-brand p{font-size:13.5px;color:var(--fog);line-height:1.55}
   .foot-col h5{font-size:12px;letter-spacing:1.44px;text-transform:uppercase;color:var(--fog);font-weight:500;margin-bottom:18px}
   .foot-col a,.foot-col p{display:block;font-size:14px;color:var(--snow);margin-bottom:10px;letter-spacing:.3px;transition:color .2s}
@@ -170,7 +171,7 @@
   .soc svg{width:20px;height:20px;display:block}
   .soc.wa{background:#25D366}
   .soc.tg{background:#229ED9}
-  .soc.mx{background:linear-gradient(135deg,#3d7bff,#6a5cff)}
+  .soc.mx{background:linear-gradient(135deg,#2b7fff,#6c5ce7)}
   /* Responsive */
   @media(max-width:900px){
     .cards{grid-template-columns:1fr;gap:16px}
@@ -203,7 +204,8 @@
     .nav-cta .btn{display:none}
     .phone-card{text-align:center}
     .phone-card .num{justify-content:center}
-    .card-socials{justify-content:center}
+    .contact-grid{justify-items:center}
+    .phone-card,.addr-card{width:100%;margin-left:auto;margin-right:auto}
     .addr-card{flex-direction:column;gap:28px;align-items:center;text-align:center}
     .addr-card .block{width:100%}
   }
@@ -305,7 +307,7 @@
         <h3>Аренда спецтехники</h3>
         <p>Экскаваторы, погрузчики, автокраны, самосвалы и другая техника для строительства и дорожных работ. Подача на объект в сжатые сроки, работа со сменным и почасовым графиком.</p>
         <a class="tel" href="tel:+79147077035">Аренда · +7 (914) 707-70-35</a>
-        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077035" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077035" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24"><text x="12" y="16.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#fff">M</text></svg></a></div>
+        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077035" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077035" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/u/YOUR_ID" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 4.5c-4.7 0-8.5 2.9-8.5 6.6 0 2.1 1.2 4 3.1 5.2-.1.9-.5 2-1 2.8-.1.2.1.4.3.3 1.2-.3 2.5-.9 3.4-1.5.8.2 1.7.3 2.7.3 4.7 0 8.5-2.9 8.5-6.6S16.7 4.5 12 4.5Z"/></svg></a></div>
       </article>
       <article class="card reveal" id="parts">
         <span class="idx">02</span>
@@ -313,7 +315,7 @@
         <h3>Продажа запчастей</h3>
         <p>Оригинальные и аналоговые запчасти для спецтехники: двигатели, гидравлика, ходовая часть, расходники.</p>
         <a class="tel" href="tel:+79147077530">Запчасти · +7 (914) 707-75-30</a>
-        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077530" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077530" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24"><text x="12" y="16.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#fff">M</text></svg></a></div>
+        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077530" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077530" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/u/YOUR_ID" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 4.5c-4.7 0-8.5 2.9-8.5 6.6 0 2.1 1.2 4 3.1 5.2-.1.9-.5 2-1 2.8-.1.2.1.4.3.3 1.2-.3 2.5-.9 3.4-1.5.8.2 1.7.3 2.7.3 4.7 0 8.5-2.9 8.5-6.6S16.7 4.5 12 4.5Z"/></svg></a></div>
       </article>
       <article class="card reveal">
         <span class="idx">03</span>
@@ -321,7 +323,7 @@
         <h3>Подбор по фильтрам</h3>
         <p>Подберём масляные, топливные, воздушные и гидравлические фильтры под вашу технику — по модели, VIN или каталожному номеру. Поможем не ошибиться с заказом.</p>
         <a class="tel" href="tel:+79147077530">По фильтрам · +7 (914) 707-75-30</a>
-        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077530" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077530" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24"><text x="12" y="16.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#fff">M</text></svg></a></div>
+        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077530" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077530" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/u/YOUR_ID" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 4.5c-4.7 0-8.5 2.9-8.5 6.6 0 2.1 1.2 4 3.1 5.2-.1.9-.5 2-1 2.8-.1.2.1.4.3.3 1.2-.3 2.5-.9 3.4-1.5.8.2 1.7.3 2.7.3 4.7 0 8.5-2.9 8.5-6.6S16.7 4.5 12 4.5Z"/></svg></a></div>
       </article>
     </div>
   </div>
@@ -372,7 +374,7 @@
     </div>
     <div class="contact-grid">
       <a class="phone-card reveal" href="tel:+79147077035">
-        <span class="lbl">Офис</span>
+        <span class="lbl">Номер офиса</span>
         <span class="num">+7 (914) 972-74-35 <span class="arrow">↗</span></span>
       </a>
       <a class="phone-card reveal" href="tel:+79147077530">
@@ -381,8 +383,8 @@
       </a>
       <div class="addr-card reveal">
         <div class="block">
-          <div class="lbl">Офис</div>
-          <div class="val">г. Владивосток, ул. Четвёртая, д. 11а<span>Приём заявок и отгрузка запчастей</span></div>
+          <div class="lbl">Адрес офиса</div>
+          <div class="val">г. Владивосток, ул. Четвёртая, д. 11а<span>Юридический адрес</span></div>
         </div>
         <div class="block">
           <div class="lbl">Компания</div>
