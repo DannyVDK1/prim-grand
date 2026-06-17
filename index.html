@@ -115,7 +115,7 @@
   .machine-inner{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;transition:opacity .22s ease,transform .22s ease}
   .machine-inner.out{opacity:0;transform:translateY(10px)}
   .machine-viz{flex:1;display:grid;place-items:center;padding:6px 0 22px}
-  .machine-viz svg{width:100%;max-width:380px;height:auto;color:var(--ice)}
+  .machine-viz img{width:100%;max-width:420px;height:240px;object-fit:contain;display:block;filter:drop-shadow(0 10px 20px rgba(15,51,95,.12))}
   .machine-cap{border-top:1px solid rgba(15,51,95,.08);padding-top:22px}
   .machine-cap .mnum{font-size:12px;letter-spacing:2px;color:var(--teal);font-weight:500;font-variant-numeric:tabular-nums}
   .machine-cap .mname{color:var(--snow);font-size:24px;font-weight:500;letter-spacing:-0.3px;margin-top:10px}
@@ -164,6 +164,13 @@
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
 
+  .card-socials{display:flex;gap:10px;margin-top:14px}
+  .soc{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 12px rgba(15,51,95,.12)}
+  .soc:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(15,51,95,.20)}
+  .soc svg{width:20px;height:20px;display:block}
+  .soc.wa{background:#25D366}
+  .soc.tg{background:#229ED9}
+  .soc.mx{background:linear-gradient(135deg,#3d7bff,#6a5cff)}
   /* Responsive */
   @media(max-width:900px){
     .cards{grid-template-columns:1fr;gap:16px}
@@ -181,7 +188,7 @@
     .fleet-stage.inline{background:var(--reef);border-radius:0 0 14px 14px;margin:-1px 0 8px;padding:2px 22px 22px}
     .machine-inner{height:auto}
     .machine-viz{padding:6px 0 14px}
-    .machine-viz svg{max-width:260px}
+    .machine-viz img{max-width:300px;height:185px}
     .machine-cap{border-top:1px solid rgba(15,51,95,.10);padding-top:16px}
     .machine-cap .mname,.machine-cap .mnum{display:none}
     .machine-cap .mdesc{font-size:13px;margin-top:0}
@@ -194,7 +201,11 @@
   @media(max-width:560px){
     .why-grid{grid-template-columns:1fr}
     .nav-cta .btn{display:none}
-    .addr-card{flex-direction:column;gap:28px}
+    .phone-card{text-align:center}
+    .phone-card .num{justify-content:center}
+    .card-socials{justify-content:center}
+    .addr-card{flex-direction:column;gap:28px;align-items:center;text-align:center}
+    .addr-card .block{width:100%}
   }
 
   .mobile-menu{display:none;position:fixed;inset:0;z-index:60;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .3s}
@@ -273,7 +284,7 @@
     <h1>Держим ваш проект<br><span class="soft">в движении</span></h1>
     <p class="sub">Аренда строительной и дорожной спецтехники, поставка запчастей, фильтров и расходников.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#contact">Подобрать запчасть <span class="arrow">↗</span></a>
+      <a class="btn btn-primary" href="tel:+79147077530">Подобрать запчасть <span class="arrow">↗</span></a>
       <a class="btn btn-ghost" href="tel:+79147077035">Арендовать технику</a>
     </div>
   </div>
@@ -294,6 +305,7 @@
         <h3>Аренда спецтехники</h3>
         <p>Экскаваторы, погрузчики, автокраны, самосвалы и другая техника для строительства и дорожных работ. Подача на объект в сжатые сроки, работа со сменным и почасовым графиком.</p>
         <a class="tel" href="tel:+79147077035">Аренда · +7 (914) 707-70-35</a>
+        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077035" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077035" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24"><text x="12" y="16.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#fff">M</text></svg></a></div>
       </article>
       <article class="card reveal" id="parts">
         <span class="idx">02</span>
@@ -301,6 +313,7 @@
         <h3>Продажа запчастей</h3>
         <p>Оригинальные и аналоговые запчасти для спецтехники: двигатели, гидравлика, ходовая часть, расходники.</p>
         <a class="tel" href="tel:+79147077530">Запчасти · +7 (914) 707-75-30</a>
+        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077530" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077530" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24"><text x="12" y="16.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#fff">M</text></svg></a></div>
       </article>
       <article class="card reveal">
         <span class="idx">03</span>
@@ -308,6 +321,7 @@
         <h3>Подбор по фильтрам</h3>
         <p>Подберём масляные, топливные, воздушные и гидравлические фильтры под вашу технику — по модели, VIN или каталожному номеру. Поможем не ошибиться с заказом.</p>
         <a class="tel" href="tel:+79147077530">По фильтрам · +7 (914) 707-75-30</a>
+        <div class="card-socials"><a class="soc wa" href="https://wa.me/79147077530" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a><a class="soc tg" href="https://t.me/+79147077530" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a><a class="soc mx" href="https://max.ru/" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24"><text x="12" y="16.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#fff">M</text></svg></a></div>
       </article>
     </div>
   </div>
@@ -394,7 +408,7 @@
         <h5>Разделы</h5>
         <a href="#services">Аренда техники</a>
         <a href="#parts">Запчасти</a>
-        <a href="#fleet">Офис</a>
+        <a href="#fleet">Автопарк</a>
         <a href="#contact">Контакты</a>
       </div>
       <div class="foot-col">
@@ -402,6 +416,7 @@
         <a href="tel:+79147077035">Аренда · +7 (914) 707-70-35</a>
         <a href="tel:+79147077530">Запчасти · +7 (914) 707-75-30</a>
         <a href="tel:+79149727435">Офис · +7 (914) 972-74-35</a>
+        <a href="group@primgrand.ru">Email · group@primgrand.ru</a>
       </div>
     </div>
     <div class="legal">
@@ -530,103 +545,14 @@ if(!reduce){
 (function(){
   const T='var(--teal)'; // accent for the "working end"
   const machines=[
-    {name:'Экскаваторы',desc:'Земляные работы, рытьё котлованов и траншей, погрузка грунта.',
-     svg:`<svg viewBox="0 0 440 270" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-       <line x1="40" y1="238" x2="400" y2="238" stroke-opacity=".3"/>
-       <rect x="70" y="206" width="172" height="28" rx="14"/>
-       <circle cx="94" cy="220" r="7"/><circle cx="218" cy="220" r="7"/><circle cx="136" cy="223" r="4.5"/><circle cx="176" cy="223" r="4.5"/>
-       <path d="M120 206 L120 162 Q120 154 128 154 L196 154 L214 182 L214 206"/>
-       <rect x="132" y="166" width="36" height="24" rx="3"/>
-       <path d="M198 172 L288 118 L302 150 L324 196"/>
-       <path d="M324 196 L358 186 L362 204 L332 214 Z" stroke="${T}"/>
-       <path d="M333 214 l4 7 M341 212 l4 7 M349 210 l4 7" stroke="${T}"/>
-     </svg>`},
-    {name:'Фронтальные погрузчики',desc:'Погрузка и перемещение сыпучих материалов, расчистка площадок.',
-     svg:`<svg viewBox="0 0 440 270" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-       <line x1="40" y1="238" x2="400" y2="238" stroke-opacity=".3"/>
-       <circle cx="258" cy="204" r="28"/><circle cx="258" cy="204" r="10"/>
-       <circle cx="150" cy="206" r="24"/><circle cx="150" cy="206" r="9"/>
-       <path d="M214 188 L214 150 L242 132 L304 132 L304 188"/>
-       <rect x="250" y="146" width="42" height="28" rx="3"/>
-       <path d="M218 178 L150 198"/>
-       <path d="M150 198 L96 198 L92 216 L150 216" stroke="${T}"/>
-       <path d="M96 198 L96 180" stroke="${T}"/>
-       <path d="M214 188 L184 188" />
-     </svg>`},
-    {name:'Автокраны',desc:'Подъём и монтаж грузов на высоте, такелажные работы.',
-     svg:`<svg viewBox="0 0 440 270" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-       <line x1="40" y1="238" x2="400" y2="238" stroke-opacity=".3"/>
-       <path d="M70 196 L70 184 L300 184 L300 196 Z"/>
-       <path d="M300 184 L300 150 L336 150 L350 184"/>
-       <rect x="308" y="158" width="26" height="20" rx="3"/>
-       <circle cx="112" cy="202" r="17"/><circle cx="152" cy="202" r="17"/><circle cx="300" cy="202" r="17"/>
-       <path d="M210 184 L210 166"/>
-       <path d="M204 166 L116 92" stroke="${T}" stroke-width="3"/>
-       <path d="M116 92 L116 138" stroke="${T}" stroke-dasharray="3 5"/>
-       <path d="M108 138 L124 138 L116 150 Z" stroke="${T}"/>
-       <path d="M180 184 L240 184" stroke-opacity=".7"/>
-     </svg>`},
-    {name:'Самосвалы',desc:'Перевозка грунта, щебня, песка и строительных материалов.',
-     svg:`<svg viewBox="0 0 440 270" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-       <line x1="40" y1="238" x2="400" y2="238" stroke-opacity=".3"/>
-       <path d="M300 196 L300 150 L334 150 L348 196"/>
-       <rect x="308" y="158" width="24" height="22" rx="3"/>
-       <path d="M96 196 L300 196"/>
-       <path d="M108 192 L98 122 L252 158 L258 192 Z" stroke="${T}"/>
-       <circle cx="142" cy="204" r="20"/><circle cx="142" cy="204" r="7"/>
-       <circle cx="182" cy="204" r="20"/><circle cx="182" cy="204" r="7"/>
-       <circle cx="300" cy="204" r="20"/><circle cx="300" cy="204" r="7"/>
-     </svg>`},
-    {name:'Бульдозеры',desc:'Планировка, расчистка территории и перемещение грунта отвалом.',
-     svg:`<svg viewBox="0 0 440 270" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-       <line x1="40" y1="238" x2="400" y2="238" stroke-opacity=".3"/>
-       <rect x="118" y="192" width="128" height="32" rx="16"/>
-       <circle cx="140" cy="208" r="6"/><circle cx="182" cy="208" r="5"/><circle cx="224" cy="208" r="6"/>
-       <path d="M150 192 L150 152 L210 152 L224 178 L224 192"/>
-       <rect x="160" y="160" width="36" height="24" rx="3"/>
-       <path d="M170 152 L170 136"/>
-       <path d="M256 174 L256 222" stroke="${T}" stroke-width="3"/>
-       <path d="M224 196 L256 200" stroke="${T}"/>
-       <path d="M256 198 L268 198" stroke="${T}"/>
-     </svg>`},
-    {name:'Автогрейдеры',desc:'Профилирование дорог, выравнивание оснований и откосов.',
-     svg:`<svg viewBox="0 0 440 270" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-       <line x1="40" y1="238" x2="400" y2="238" stroke-opacity=".3"/>
-       <path d="M88 182 L250 182"/>
-       <circle cx="100" cy="202" r="19"/><circle cx="100" cy="202" r="7"/>
-       <circle cx="272" cy="204" r="18"/><circle cx="272" cy="204" r="6"/>
-       <circle cx="312" cy="204" r="18"/><circle cx="312" cy="204" r="6"/>
-       <path d="M250 182 L250 148 L300 148 L320 182"/>
-       <rect x="262" y="156" width="34" height="22" rx="3"/>
-       <path d="M120 182 Q166 146 206 182"/>
-       <path d="M156 206 L214 216" stroke="${T}" stroke-width="3"/>
-       <path d="M163 188 L180 204" />
-     </svg>`},
-    {name:'Дорожные катки',desc:'Уплотнение грунта, основания и асфальтового покрытия.',
-     svg:`<svg viewBox="0 0 440 270" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-       <line x1="40" y1="238" x2="400" y2="238" stroke-opacity=".3"/>
-       <circle cx="152" cy="194" r="36" stroke="${T}"/><circle cx="152" cy="194" r="15" stroke="${T}"/>
-       <path d="M152 158 L152 148 L256 148 L256 196 L194 196"/>
-       <path d="M204 148 L204 118 L250 118 L250 148"/>
-       <rect x="212" y="124" width="30" height="20" rx="3"/>
-       <circle cx="280" cy="200" r="22"/><circle cx="280" cy="200" r="9"/>
-       <path d="M188 196 L258 196"/>
-     </svg>`},
-    {name:'Манипуляторы',desc:'Самопогрузка и доставка габаритных грузов краном-манипулятором.',
-     svg:`<svg viewBox="0 0 440 270" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-       <line x1="40" y1="238" x2="400" y2="238" stroke-opacity=".3"/>
-       <path d="M300 196 L300 152 L334 152 L348 196"/>
-       <rect x="308" y="160" width="24" height="22" rx="3"/>
-       <path d="M80 196 L300 196"/>
-       <rect x="80" y="178" width="180" height="14" rx="2"/>
-       <circle cx="122" cy="204" r="18"/><circle cx="122" cy="204" r="6"/>
-       <circle cx="162" cy="204" r="18"/><circle cx="162" cy="204" r="6"/>
-       <circle cx="300" cy="204" r="18"/><circle cx="300" cy="204" r="6"/>
-       <path d="M270 178 L270 142" stroke="${T}"/>
-       <path d="M270 142 L208 116" stroke="${T}" stroke-width="3"/>
-       <path d="M208 116 L252 92" stroke="${T}" stroke-width="3"/>
-       <path d="M252 92 L252 116" stroke="${T}" stroke-dasharray="3 5"/>
-     </svg>`}
+    {name:'Экскаваторы',desc:'Земляные работы, рытьё котлованов и траншей, погрузка грунта.',img:'assets/excavators.png'},
+    {name:'Фронтальные погрузчики',desc:'Погрузка и перемещение сыпучих материалов, расчистка площадок.',img:'assets/loaders.png'},
+    {name:'Автокраны',desc:'Подъём и монтаж грузов на высоте, такелажные работы.',img:'assets/cranes.png'},
+    {name:'Самосвалы',desc:'Перевозка грунта, щебня, песка и строительных материалов.',img:'assets/dumptrucks.png'},
+    {name:'Бульдозеры',desc:'Планировка, расчистка территории и перемещение грунта отвалом.',img:'assets/bulldozers.png'},
+    {name:'Автогрейдеры',desc:'Профилирование дорог, выравнивание оснований и откосов.',img:'assets/graders.png'},
+    {name:'Дорожные катки',desc:'Уплотнение грунта, основания и асфальтового покрытия.',img:'assets/rollers.png'},
+    {name:'Манипуляторы',desc:'Самопогрузка и доставка габаритных грузов краном-манипулятором.',img:'assets/manipulators.png'}
   ];
 
   const menu=document.getElementById('fleetMenu');
@@ -645,7 +571,7 @@ if(!reduce){
   function render(i){
     const m=machines[i];
     const num=String(i+1).padStart(2,'0');
-    inner.innerHTML=`<div class="machine-viz">${m.svg}</div>
+    inner.innerHTML=`<div class="machine-viz"><img class="machine-img" src="${m.img}" alt="${m.name}" loading="lazy"></div>
       <div class="machine-cap"><span class="mnum">${num} / 08</span><div class="mname">${m.name}</div><div class="mdesc">${m.desc}</div></div>`;
   }
   function setActive(i){
