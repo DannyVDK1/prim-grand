@@ -126,11 +126,11 @@
   .fleet-item:focus-visible{outline:1px solid var(--cyan);outline-offset:2px;border-radius:4px}
 
   .fleet-stage{background:var(--trench);border-radius:var(--r-card);padding:40px;min-height:420px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
-  .fleet-stage::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 60% 35%,rgba(31,111,235,.16) 0%,rgba(31,111,235,0) 70%);pointer-events:none}
+  .fleet-stage::after{display:none}
   .machine-inner{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;transition:opacity .3s cubic-bezier(.4,0,.2,1),transform .3s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}
   .machine-inner.out{opacity:0;transform:translateY(8px) scale(.99)}
   .machine-viz{flex:1;display:grid;place-items:center;padding:6px 0 22px}
-  .machine-viz img{width:100%;max-width:420px;height:240px;object-fit:contain;display:block;filter:drop-shadow(0 10px 20px rgba(15,51,95,.12))}
+  .machine-viz img{width:100%;max-width:420px;height:240px;object-fit:contain;display:block}
   .machine-cap{border-top:1px solid rgba(15,51,95,.08);padding-top:22px}
   .machine-cap .mnum{font-size:12px;letter-spacing:2px;color:var(--teal);font-weight:500;font-variant-numeric:tabular-nums}
   .machine-cap .mname{color:var(--snow);font-size:24px;font-weight:500;letter-spacing:-0.3px;margin-top:10px}
@@ -200,7 +200,7 @@
     .fleet-head{margin-bottom:20px}
     .fleet-stage{min-height:0;padding:0;background:transparent;border-radius:0;overflow:visible}
     .fleet-stage::after{display:none}
-    .fleet-stage.inline{background:var(--reef);border-radius:0 0 14px 14px;margin:-1px 0 8px;padding:2px 22px 22px}
+    .fleet-stage.inline{background:#fff;border-radius:0 0 14px 14px;margin:-1px 0 8px;padding:2px 22px 22px}
     .machine-inner{height:auto}
     .machine-viz{padding:6px 0 14px}
     .machine-viz img{max-width:300px;height:185px}
@@ -210,7 +210,7 @@
     /* the chosen row and its picture fuse into one card, no overlap */
     .fleet-item{padding-left:18px}
     .fleet-item:hover{padding-left:18px}
-    .fleet-item.active{padding-left:18px;background:var(--reef);border-radius:14px 14px 0 0;border-bottom-color:transparent}
+    .fleet-item.active{padding-left:18px;background:#fff;border-radius:14px 14px 0 0;border-bottom-color:transparent}
     .fleet-item.active::before{left:8px}
   }
   @media(max-width:560px){
@@ -371,10 +371,10 @@
       <h2>Надёжность в каждой смене</h2>
     </div>
     <div class="why-grid">
-      <div class="why-cell reveal"><span class="mark"></span><h4>Своя база и склад</h4><p>Офис, склад и стоянка техники в одном месте во Владивостоке — без посредников.</p></div>
+      <div class="why-cell reveal"><span class="mark"></span><h4>Своя база и склад</h4><p>Склад и стоянка техники в одном месте во Владивостоке — без посредников.</p></div>
       <div class="why-cell reveal"><span class="mark"></span><h4>Запчасти в наличии</h4><p>Всегда поддерживаем товарные остатки на складе.</p></div>
       <div class="why-cell reveal"><span class="mark"></span><h4>Техника на ходу</h4><p>Регулярное обслуживание парка и выезд на объект по согласованному графику.</p></div>
-      <div class="why-cell reveal"><span class="mark"></span><h4>Работаем по краю</h4><p>Владивосток и весь Приморский край — подача и доставка туда, где идёт работа.</p></div>
+      <div class="why-cell reveal"><span class="mark"></span><h4>Работаем по РФ</h4><p>Доставляем груз по всей России.</p></div>
     </div>
   </div>
 </section>
@@ -385,7 +385,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Контакты</span>
       <h2>Свяжитесь с нами</h2>
-      <p>Пожалуйста выберите удобный способ связи и оставьте заявку.</p>
+      <p>Выберите удобный способ связи и оставьте заявку.</p>
     </div>
     <div class="contact-grid">
       <a class="phone-card reveal" href="tel:+79149727435">
