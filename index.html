@@ -130,7 +130,7 @@
   .machine-inner{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;transition:opacity .3s cubic-bezier(.4,0,.2,1),transform .3s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}
   .machine-inner.out{opacity:0;transform:translateY(8px) scale(.99)}
   .machine-viz{flex:1;display:grid;place-items:center;padding:6px 0 22px}
-  .machine-viz img{width:100%;max-width:420px;height:240px;object-fit:contain;display:block}
+  .machine-viz img{width:100%;max-width:460px;height:240px;object-fit:contain;display:block}
   .machine-cap{border-top:1px solid rgba(15,51,95,.08);padding-top:22px}
   .machine-cap .mnum{font-size:12px;letter-spacing:2px;color:var(--teal);font-weight:500;font-variant-numeric:tabular-nums}
   .machine-cap .mname{color:var(--snow);font-size:24px;font-weight:500;letter-spacing:-0.3px;margin-top:10px}
@@ -371,10 +371,10 @@
       <h2>Надёжность в каждой смене</h2>
     </div>
     <div class="why-grid">
-      <div class="why-cell reveal"><span class="mark"></span><h4>Своя база и склад</h4><p>Склад и стоянка техники в одном месте во Владивостоке — без посредников.</p></div>
+      <div class="why-cell reveal"><span class="mark"></span><h4>Своя база и склад</h4><p>Офис, склад и стоянка техники в одном месте во Владивостоке — без посредников.</p></div>
       <div class="why-cell reveal"><span class="mark"></span><h4>Запчасти в наличии</h4><p>Всегда поддерживаем товарные остатки на складе.</p></div>
       <div class="why-cell reveal"><span class="mark"></span><h4>Техника на ходу</h4><p>Регулярное обслуживание парка и выезд на объект по согласованному графику.</p></div>
-      <div class="why-cell reveal"><span class="mark"></span><h4>Работаем по РФ</h4><p>Доставляем груз по всей России.</p></div>
+      <div class="why-cell reveal"><span class="mark"></span><h4>Работаем по краю</h4><p>Владивосток и весь Приморский край — подача и доставка туда, где идёт работа.</p></div>
     </div>
   </div>
 </section>
@@ -385,7 +385,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Контакты</span>
       <h2>Свяжитесь с нами</h2>
-      <p>Выберите удобный способ связи и оставьте заявку.</p>
+      <p>Пожалуйста выберите удобный способ связи и оставьте заявку.</p>
     </div>
     <div class="contact-grid">
       <a class="phone-card reveal" href="tel:+79149727435">
@@ -563,14 +563,14 @@ if(!reduce){
 (function(){
   const T='var(--teal)'; // accent for the "working end"
   const machines=[
-    {name:'Экскаваторы',desc:'Земляные работы, рытьё котлованов и траншей, погрузка грунта.',img:'assets/excavators.png'},
-    {name:'Фронтальные погрузчики',desc:'Погрузка и перемещение сыпучих материалов, расчистка площадок.',img:'assets/loaders.png'},
-    {name:'Автокраны',desc:'Подъём и монтаж грузов на высоте, такелажные работы.',img:'assets/cranes.png'},
-    {name:'Самосвалы',desc:'Перевозка грунта, щебня, песка и строительных материалов.',img:'assets/dumptrucks.png'},
-    {name:'Бульдозеры',desc:'Планировка, расчистка территории и перемещение грунта отвалом.',img:'assets/bulldozers.png'},
-    {name:'Автогрейдеры',desc:'Профилирование дорог, выравнивание оснований и откосов.',img:'assets/graders.png'},
-    {name:'Дорожные катки',desc:'Уплотнение грунта, основания и асфальтового покрытия.',img:'assets/rollers.png'},
-    {name:'Манипуляторы',desc:'Самопогрузка и доставка габаритных грузов краном-манипулятором.',img:'assets/manipulators.png'}
+    {name:'Экскаваторы',desc:'Земляные работы, рытьё котлованов и траншей, погрузка грунта.',img:'assets/excavators.jpg'},
+    {name:'Фронтальные погрузчики',desc:'Погрузка и перемещение сыпучих материалов, расчистка площадок.',img:'assets/loaders.jpg'},
+    {name:'Автокраны',desc:'Подъём и монтаж грузов на высоте, такелажные работы.',img:'assets/cranes.jpg'},
+    {name:'Самосвалы',desc:'Перевозка грунта, щебня, песка и строительных материалов.',img:'assets/dumptrucks.jpg'},
+    {name:'Бульдозеры',desc:'Планировка, расчистка территории и перемещение грунта отвалом.',img:'assets/bulldozers.jpg'},
+    {name:'Автогрейдеры',desc:'Профилирование дорог, выравнивание оснований и откосов.',img:'assets/graders.jpg'},
+    {name:'Дорожные катки',desc:'Уплотнение грунта, основания и асфальтового покрытия.',img:'assets/rollers.jpg'},
+    {name:'Манипуляторы',desc:'Самопогрузка и доставка габаритных грузов краном-манипулятором.',img:'assets/manipulators.jpg'}
   ];
 
   machines.forEach(m=>{const _p=new Image();_p.decoding='async';_p.src=m.img;});
