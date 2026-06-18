@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
 <title>ПРИМ ГРАНД — аренда спецтехники, продажа запчастей и фильтров</title>
 <meta name="description" content="ООО «ПРИМ ГРАНД» — аренда строительной и дорожной спецтехники, продажа запчастей и фильтров.">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -83,7 +84,9 @@
   .hero-floor{position:absolute;left:0;right:0;bottom:0;height:16%;z-index:1;pointer-events:none;background:linear-gradient(to top,#ffffff 0%,#ffffff 30%,rgba(255,255,255,0) 100%)}
   .hero-inner{position:relative;z-index:2;max-width:880px;margin:0 auto}
   .hero h1{color:var(--snow);font-weight:500;font-size:clamp(44px,8.5vw,86px);line-height:1.02;letter-spacing:clamp(-2.6px,-0.4vw,-1.2px);margin:26px 0 22px}
-  .hero h1 .soft{color:var(--fog)}
+  @keyframes pgheart{0%,46%,100%{transform:scale(1)}8%{transform:scale(1.05)}18%{transform:scale(1)}27%{transform:scale(1.032)}36%{transform:scale(1)}}
+  .hero h1 .soft{color:var(--fog);display:inline-block;transform-origin:center;animation:pgheart 2.8s ease-in-out infinite;will-change:transform}
+  @media(prefers-reduced-motion:reduce){.hero h1 .soft{animation:none}}
   .hero p.sub{font-size:clamp(15px,1.7vw,18px);color:var(--fog);max-width:560px;margin:0 auto;line-height:1.55}
   .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:38px}
   .scroll-cue{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:2;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--fog);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.7}
@@ -181,6 +184,7 @@
   .reveal.in{opacity:1;transform:none}
 
   .card-socials{display:flex;gap:10px;margin-top:14px}
+  .phone-card .card-socials{margin-top:20px}
   .soc{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 12px rgba(15,51,95,.12)}
   .soc:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(15,51,95,.20)}
   .soc svg{width:20px;height:20px;display:block}
@@ -218,6 +222,8 @@
     .why-grid{grid-template-columns:1fr}
     .nav-cta .btn{display:none}
     .phone-card{text-align:center}
+    .phone-card .num{justify-content:center}
+    .phone-card .card-socials{justify-content:center}
     .phone-card .num{display:block;font-size:clamp(18px,5.2vw,28px);overflow-wrap:anywhere;letter-spacing:-0.3px}
     .contact-grid{justify-items:center}
     .phone-card,.addr-card{width:100%;margin-left:auto;margin-right:auto;padding:clamp(24px,7vw,40px)}
@@ -348,7 +354,7 @@
 <!-- FLEET (interactive) -->
 <section class="band" id="fleet">
   <div class="wrap">
-    <div class="fleet-split">
+    <div class="fleet-split" data-gallery="fleet">
       <div class="reveal">
         <div class="fleet-head">
           <span class="eyebrow">Автопарк</span>
@@ -365,6 +371,57 @@
 </section>
 
 <!-- WHY -->
+<!-- FILTERS -->
+<section class="band" id="filters">
+  <div class="wrap">
+    <div class="fleet-split" data-gallery="filters">
+      <div class="reveal">
+        <div class="fleet-head">
+          <span class="eyebrow">Фильтрация</span>
+          <h2>Фильтры под вашу технику</h2>
+          <p class="hint">Выберите тип — подберём по модели, VIN или каталожному номеру.</p>
+        </div>
+        <div class="fleet-menu" role="tablist" aria-label="Виды фильтров"></div>
+      </div>
+      <div class="fleet-stage reveal" aria-live="polite"><div class="machine-inner"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTS -->
+<section class="band" id="parts-catalog">
+  <div class="wrap">
+    <div class="fleet-split" data-gallery="parts">
+      <div class="reveal">
+        <div class="fleet-head">
+          <span class="eyebrow">Запчасти</span>
+          <h2>Запчасти для спецтехники</h2>
+          <p class="hint">Подбор по модели, VIN или каталожному номеру — поможем не ошибиться.</p>
+        </div>
+        <div class="fleet-menu" role="tablist" aria-label="Группы запчастей"></div>
+      </div>
+      <div class="fleet-stage reveal" aria-live="polite"><div class="machine-inner"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OILS -->
+<section class="band" id="oils">
+  <div class="wrap">
+    <div class="fleet-split" data-gallery="oils">
+      <div class="reveal">
+        <div class="fleet-head">
+          <span class="eyebrow">Расходники</span>
+          <h2>Масла и технические жидкости</h2>
+          <p class="hint">Под сезон и режим работы — подберём по технике и регламенту.</p>
+        </div>
+        <div class="fleet-menu" role="tablist" aria-label="Масла и жидкости"></div>
+      </div>
+      <div class="fleet-stage reveal" aria-live="polite"><div class="machine-inner"></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="band" id="why">
   <div class="wrap">
     <div class="section-head reveal">
@@ -389,10 +446,15 @@
       <p>Пожалуйста выберите удобный способ связи и оставьте заявку.</p>
     </div>
     <div class="contact-grid">
-      <a class="phone-card reveal" href="tel:+79149727435">
+      <div class="phone-card reveal">
         <span class="lbl">Номер офиса</span>
-        <span class="num">+7 (914) 972-74-35 <span class="arrow">↗</span></span>
-      </a>
+        <a class="num" href="tel:+79149727435">+7 (914) 972-74-35 <span class="arrow">↗</span></a>
+        <div class="card-socials">
+          <a class="soc wa" href="https://wa.me/79149727435" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.1-.4 0a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.8 1.6-.4 2.7.5 1.2 1.3 2.3 2.4 3.2 1.6 1.4 3 1.9 3.9 2.1.7.2 1.4.1 1.9-.2.4-.2 1.1-.9 1.2-1.3.1-.4.1-.7.1-.8s-.2-.2-.4-.3Z"/></svg></a>
+          <a class="soc tg" href="https://t.me/+79149727435" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.4 13l-4.4-1.4c-1-.3-1-.9.2-1.4L20.5 3.3c.8-.3 1.6.2 1.4 1Z"/></svg></a>
+          <a class="soc mx" href="https://max.ru/u/f9LHodD0cOIBzo94_o0BU30wBTiOABNocrUD2nNzt5otqwfi9tqr-Dvyals" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 4.5c-4.7 0-8.5 2.9-8.5 6.6 0 2.1 1.2 4 3.1 5.2-.1.9-.5 2-1 2.8-.1.2.1.4.3.3 1.2-.3 2.5-.9 3.4-1.5.8.2 1.7.3 2.7.3 4.7 0 8.5-2.9 8.5-6.6S16.7 4.5 12 4.5Z"/></svg></a>
+        </div>
+      </div>
       <a class="phone-card reveal" href="mailto:group@primgrand.ru">
         <span class="lbl">Email</span>
         <span class="num">group@primgrand.ru <span class="arrow">↗</span></span>
@@ -560,61 +622,83 @@ if(!reduce){
   });
 })();
 
-/* ---------- FLEET: interactive machine line-art ---------- */
+/* ---------- GALLERIES: machines / filters / parts / oils ---------- */
 (function(){
-  const T='var(--teal)'; // accent for the "working end"
-  const machines=[
-    {name:'Экскаваторы',desc:'Земляные работы, рытьё котлованов и траншей, погрузка грунта.',img:'assets/excavators.jpg'},
-    {name:'Фронтальные погрузчики',desc:'Погрузка и перемещение сыпучих материалов, расчистка площадок.',img:'assets/loaders.jpg'},
-    {name:'Автокраны',desc:'Подъём и монтаж грузов на высоте, такелажные работы.',img:'assets/cranes.jpg'},
-    {name:'Самосвалы',desc:'Перевозка грунта, щебня, песка и строительных материалов.',img:'assets/dumptrucks.jpg'},
-    {name:'Бульдозеры',desc:'Планировка, расчистка территории и перемещение грунта отвалом.',img:'assets/bulldozers.jpg'},
-    {name:'Автогрейдеры',desc:'Профилирование дорог, выравнивание оснований и откосов.',img:'assets/graders.jpg'},
-    {name:'Дорожные катки',desc:'Уплотнение грунта, основания и асфальтового покрытия.',img:'assets/rollers.jpg'},
-    {name:'Манипуляторы',desc:'Самопогрузка и доставка габаритных грузов краном-манипулятором.',img:'assets/manipulators.jpg'}
-  ];
-
-  machines.forEach(m=>{const _p=new Image();_p.decoding='async';_p.src=m.img;});
-  const menu=document.getElementById('fleetMenu');
-  const inner=document.getElementById('machineInner');
-  const stage=document.getElementById('stage');
-  const fleetSplit=document.querySelector('.fleet-split');
-  const mq=window.matchMedia('(max-width:860px)');
-  const items=[];
-  let current=-1,timer=null;
-  function placeStage(i){
-    if(mq.matches){ items[i].insertAdjacentElement('afterend',stage); stage.classList.add('inline'); }
-    else { fleetSplit.appendChild(stage); stage.classList.remove('inline'); }
+  const DATA={
+    fleet:[
+      {name:'Экскаваторы',desc:'Земляные работы, рытьё котлованов и траншей, погрузка грунта.',img:'assets/excavators.jpg'},
+      {name:'Фронтальные погрузчики',desc:'Погрузка и перемещение сыпучих материалов, расчистка площадок.',img:'assets/loaders.jpg'},
+      {name:'Автокраны',desc:'Подъём и монтаж грузов на высоте, такелажные работы.',img:'assets/cranes.jpg'},
+      {name:'Самосвалы',desc:'Перевозка грунта, щебня, песка и строительных материалов.',img:'assets/dumptrucks.jpg'},
+      {name:'Бульдозеры',desc:'Планировка, расчистка территории и перемещение грунта отвалом.',img:'assets/bulldozers.jpg'},
+      {name:'Автогрейдеры',desc:'Профилирование дорог, выравнивание оснований и откосов.',img:'assets/graders.jpg'},
+      {name:'Дорожные катки',desc:'Уплотнение грунта, основания и асфальтового покрытия.',img:'assets/rollers.jpg'},
+      {name:'Манипуляторы',desc:'Самопогрузка и доставка габаритных грузов краном-манипулятором.',img:'assets/manipulators.jpg'}
+    ],
+    filters:[
+      {name:'Масляные фильтры',desc:'Очистка моторного масла от продуктов износа и загрязнений.',img:'assets/filter-oil.jpg'},
+      {name:'Топливные фильтры',desc:'Защита топливной аппаратуры от воды и механических примесей.',img:'assets/filter-fuel.jpg'},
+      {name:'Воздушные фильтры',desc:'Чистый воздух на впуске — защита двигателя от пыли и абразива.',img:'assets/filter-air.jpg'},
+      {name:'Гидравлические фильтры',desc:'Очистка рабочей жидкости гидросистемы, защита насосов и гидромоторов.',img:'assets/filter-hydraulic.jpg'},
+      {name:'Салонные фильтры',desc:'Чистый воздух в кабине оператора, защита от пыли и запахов.',img:'assets/filter-cabin.jpg'},
+      {name:'Фильтры-сепараторы',desc:'Отделение воды от топлива для надёжной работы дизеля.',img:'assets/filter-separator.jpg'}
+    ],
+    parts:[
+      {name:'Ходовая часть',desc:'Гусеницы, катки, звёздочки, направляющие колёса и натяжители.',img:'assets/part-undercarriage.jpg'},
+      {name:'Гидравлика',desc:'Гидроцилиндры, насосы, распределители, РВД и уплотнения.',img:'assets/part-hydraulics.jpg'},
+      {name:'Двигатель',desc:'Поршневая группа, прокладки, ремни, помпы и навесное.',img:'assets/part-engine.jpg'},
+      {name:'Электрооборудование',desc:'Стартеры, генераторы, датчики, проводка и освещение.',img:'assets/part-electric.jpg'},
+      {name:'Тормозная система',desc:'Диски, колодки, суппорты и компоненты тормозного контура.',img:'assets/part-brakes.jpg'},
+      {name:'РТИ и уплотнения',desc:'Сальники, манжеты, кольца и ремкомплекты под вашу технику.',img:'assets/part-seals.jpg'}
+    ],
+    oils:[
+      {name:'Моторные масла',desc:'Для дизельных двигателей спецтехники — защита и ресурс.',img:'assets/oil-motor.jpg'},
+      {name:'Гидравлические масла',desc:'Стабильная работа гидросистемы в любой сезон.',img:'assets/oil-hydraulic.jpg'},
+      {name:'Трансмиссионные масла',desc:'Для коробок, мостов и редукторов под нагрузкой.',img:'assets/oil-transmission.jpg'},
+      {name:'Антифризы и ОЖ',desc:'Охлаждающие жидкости с защитой от коррозии и перегрева.',img:'assets/oil-antifreeze.jpg'},
+      {name:'Тормозные жидкости',desc:'Надёжная работа тормозного контура в любых условиях.',img:'assets/oil-brake.jpg'},
+      {name:'Смазки и пластичные',desc:'Консистентные смазки для узлов трения и шарниров.',img:'assets/oil-grease.jpg'}
+    ]
+  };
+  function initGallery(split){
+    const data=DATA[split.dataset.gallery]; if(!data)return;
+    const total=data.length;
+    const menu=split.querySelector('.fleet-menu');
+    const stage=split.querySelector('.fleet-stage');
+    const inner=stage.querySelector('.machine-inner');
+    data.forEach(m=>{ if(m.img){const _p=new Image();_p.decoding='async';_p.src=m.img;} });
+    const mq=window.matchMedia('(max-width:860px)');
+    const items=[]; let current=-1,timer=null;
+    function placeStage(i){
+      if(mq.matches){ items[i].insertAdjacentElement('afterend',stage); stage.classList.add('inline'); }
+      else { split.appendChild(stage); stage.classList.remove('inline'); }
+    }
+    mq.addEventListener('change',()=>{ if(current>=0) placeStage(current); });
+    function render(i){
+      const m=data[i]; const num=String(i+1).padStart(2,'0');
+      const viz=m.img?`<div class="machine-viz"><img class="machine-img" src="${m.img}" alt="${m.name}" decoding="async"></div>`:'';
+      inner.innerHTML=viz+`<div class="machine-cap"><span class="mnum">${num} / ${String(total).padStart(2,'0')}</span><div class="mname">${m.name}</div><div class="mdesc">${m.desc}</div></div>`;
+    }
+    function setActive(i){
+      if(i===current)return; current=i;
+      items.forEach((b,bi)=>{ b.classList.toggle('active',bi===i); b.setAttribute('aria-selected',bi===i); });
+      placeStage(i);
+      if(reduce){ render(i); return; }
+      inner.classList.add('out'); clearTimeout(timer);
+      timer=setTimeout(()=>{ render(i); inner.classList.remove('out'); },150);
+    }
+    data.forEach((m,i)=>{
+      const b=document.createElement('button');
+      b.className='fleet-item'; b.type='button'; b.setAttribute('role','tab');
+      b.innerHTML=`<span class="t">${m.name}</span><span class="n">${String(i+1).padStart(2,'0')}</span>`;
+      b.addEventListener('mouseenter',()=>setActive(i));
+      b.addEventListener('focus',()=>setActive(i));
+      b.addEventListener('click',()=>setActive(i));
+      menu.appendChild(b); items.push(b);
+    });
+    render(0); current=0; items[0].classList.add('active'); items[0].setAttribute('aria-selected','true'); placeStage(0);
   }
-  mq.addEventListener('change',()=>{ if(current>=0) placeStage(current); });
-
-  function render(i){
-    const m=machines[i];
-    const num=String(i+1).padStart(2,'0');
-    inner.innerHTML=`<div class="machine-viz"><img class="machine-img" src="${m.img}" alt="${m.name}" decoding="async"></div>
-      <div class="machine-cap"><span class="mnum">${num} / 08</span><div class="mname">${m.name}</div><div class="mdesc">${m.desc}</div></div>`;
-  }
-  function setActive(i){
-    if(i===current)return;
-    current=i;
-    items.forEach((b,bi)=>{b.classList.toggle('active',bi===i);b.setAttribute('aria-selected',bi===i);});
-    placeStage(i);
-    if(reduce){render(i);return;}
-    inner.classList.add('out');
-    clearTimeout(timer);
-    timer=setTimeout(()=>{render(i);inner.classList.remove('out');},150);
-  }
-
-  machines.forEach((m,i)=>{
-    const b=document.createElement('button');
-    b.className='fleet-item';b.type='button';b.setAttribute('role','tab');
-    b.innerHTML=`<span class="t">${m.name}</span><span class="n">${String(i+1).padStart(2,'0')}</span>`;
-    b.addEventListener('mouseenter',()=>setActive(i));
-    b.addEventListener('focus',()=>setActive(i));
-    b.addEventListener('click',()=>setActive(i));
-    menu.appendChild(b);items.push(b);
-  });
-  render(0);current=0;items[0].classList.add('active');items[0].setAttribute('aria-selected','true');placeStage(0);
+  document.querySelectorAll('.fleet-split').forEach(initGallery);
 })();
 </script>
 </body>
